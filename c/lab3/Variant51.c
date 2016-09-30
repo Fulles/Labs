@@ -15,13 +15,13 @@ int main()
     scanf("%d", &z );
     switch (z) {
         case 1:
-            if (((35*pow(a,2)+37*a*x+6*pow(x,2)) >= 0) && ((35*pow(a,2)+37*a*x+6*pow(x,2)) <= 0)) {
+            if (((35*pow(a,2)+37*a*x+6*pow(x,2)) >= 0) && ((35*pow(a,2)+37*a*x+6*pow(x,2)) <= 0)){
                 printf("Нельзя делить на НОЛЬ");
                 break;
             }
             else {g = (3*(-3*pow(a,2)+2*a*x+21*pow(x,2)))/(35*pow(a,2)+37*a*x+6*pow(x,2));
-        printf ("g= %f \n", g) ;
-        break;}
+                printf ("g= %f \n", g) ;
+                break;}
 
         case 2:
             f = 1/(cos(3*pow(a,2)+5*a*x+2*pow(x,2)));
