@@ -3,6 +3,6 @@ project(lab3)
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c90")
 
-set(SOURCE_FILES Variant51.c)
+set(SOURCE_FILES ewr.c)
 add_executable(lab3 ${SOURCE_FILES})
 target_link_libraries(lab3 m)
