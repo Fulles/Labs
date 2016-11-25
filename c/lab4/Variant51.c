@@ -24,7 +24,7 @@ int main()
         p = x + (n * 0.1);
         ad = (a_to-a_from)/n;
         double y_array[n];
-        maxi, mini, maxi2, mini2 = 0;
+        maxi, mini, maxi2, mini2, ar = 0;
 
         switch (z) {
             case 1:
@@ -39,7 +39,19 @@ int main()
                             (35 * pow(a, 2) + 37 * a * x + 6 * pow(x, 2));
                         y_array[ar] = g;
                         ar += 1;
-                        printf("g= %f \n", g);
+                        printf("g= %lf \n", g);
+                        if (y_array[maxi] < y_array [maxi2]) {
+                            maxi = maxi2;
+                            maxi2 += 1;
+                        } else {
+                            maxi2 +=1;
+                        }
+                        if (y_array[mini] > y_array [mini2]) {
+                            mini = mini2;
+                            mini2 += 1;
+                        } else {
+                            mini2 +=1;
+                        }
 
                     } else {
                         printf("Нельзя делить на НОЛЬ \n");
@@ -55,7 +67,19 @@ int main()
                     f = 1 / (cos(3 * pow(a, 2) + 5 * a * x + 2 * pow(x, 2)));
                     y_array[ar] = f;
                     ar += 1;
-                    printf("f= %f \n", f);
+                    printf("f= %lf \n", f);
+                    if (y_array[maxi] < y_array [maxi2]) {
+                        maxi = maxi2;
+                        maxi2 += 1;
+                    } else {
+                        maxi2 +=1;
+                    }
+                    if (y_array[mini] > y_array [mini2]) {
+                        mini = mini2;
+                        mini2 += 1;
+                    } else {
+                        mini2 +=1;
+                    }
                 }
             case 3:
 
@@ -69,9 +93,19 @@ int main()
                         y = acosh(-12 * pow(a, 2) - 4 * a * x + pow(x, 2) + 1);
                         y_array[ar] = y;
                         ar += 1;
-                        printf("f= %f \n", y);
-
-
+                        printf("f= %lf \n", y);
+                        if (y_array[maxi] < y_array [maxi2]) {
+                            maxi = maxi2;
+                            maxi2 += 1;
+                        } else {
+                            maxi2 +=1;
+                        }
+                        if (y_array[mini] > y_array [mini2]) {
+                            mini = mini2;
+                            mini2 += 1;
+                        } else {
+                            mini2 +=1;
+                        }
                     }
                     else {
 
@@ -84,10 +118,12 @@ int main()
                 printf("Выберите номер функции 1,2 или 3");
         }
 
-        printf("min = %lf \n", y_array[mini]);
+        printf("Наибольшее число массива = %lf \n", y_array[maxi]);
+        printf("Наименьшее число массива = %lf \n", y_array[mini]);
         printf("Хотите запустить программу? Нажмите 1 для продолжения, 2 для выхода \n");
         scanf("%d", &j);
     }
+
 }
 
 
