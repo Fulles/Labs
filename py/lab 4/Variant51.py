@@ -81,7 +81,7 @@ while start == 1:
             print("Выберите функцию 1,2 или 3")
     print(y_values[mini])
     print(y_values[maxi])
-    plt.plot(x_values, y_values)
+    plt.plot(x_values, y_values, 'bo-')
     plt.grid()
     plt.xlabel('X')
     plt.ylabel('Y')
