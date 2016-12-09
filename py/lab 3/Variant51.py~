@@ -10,6 +10,10 @@ while start == 1:
     o = x+(n*0.1)
     x_values = []
     y_values = []
+    maxi = 0
+    maxi2 = 0
+    mini = 0
+    mini2 = 0
 
     while x < o:
         x += 0.1
@@ -21,6 +25,16 @@ while start == 1:
                 x_values.append(x)
                 y_values.append(g)
                 plt.title('График g')
+                if y_values[mini] > y_values[mini2]:
+                    mini = mini2
+                    mini2 += 1
+                else:
+                    mini2 += 1
+                if y_values[maxi] < y_values[maxi2]:
+                    maxi = maxi2
+                    maxi2 += 1
+                else:
+                    maxi2 += 1
             else:
                 print("Нельзя делить на НОЛЬ")
             '''Вторая функция'''
@@ -30,6 +44,16 @@ while start == 1:
             x_values.append(x)
             y_values.append(f)
             plt.title('График f')
+            if y_values[mini] > y_values[mini2]:
+                mini = mini2
+                mini2 += 1
+            else:
+                mini2 += 1
+            if y_values[maxi] < y_values[maxi2]:
+                maxi = maxi2
+                maxi2 += 1
+            else:
+                maxi2 += 1
             '''Третья функция'''
         elif z == 3:
             v = (-12*a**2-4*a*x+x**2+1)
@@ -39,16 +63,29 @@ while start == 1:
                 x_values.append(x)
                 y_values.append(y)
                 plt.title('График y')
+                if y_values[mini] > y_values[mini2]:
+                    mini = mini2
+                    mini2 += 1
+                else:
+                    mini2 += 1
+                if y_values[maxi] < y_values[maxi2]:
+                    maxi = maxi2
+                    maxi2 += 1
+                else:
+                    maxi2 += 1
+
             else:
                 print("Не существует ARCCOSH от заданных переменных, Пожалуйста,введите другие значения переменных ")
 
         else:
             print("Выберите функцию 1,2 или 3")
-    plt.plot(x_values, y_values)
+    print(y_values[mini])
+    print(y_values[maxi])
+    plt.plot(x_values, y_values, 'bo-')
     plt.grid()
     plt.xlabel('X')
     plt.ylabel('Y')
     plt.show()
+    start = int(input("Хотите запустить программу? Если да,то нажмите 1 \n"))
 
-start = int(input("Хотите запустить программу? Если да,то нажмите 1 \n"))
 

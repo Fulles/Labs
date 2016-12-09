@@ -5,7 +5,7 @@ double acosh(double d);
 int main()
 {
     double a_from, x, g, f, y, v, p, a, a_to, ad, i;
-    int z, n, j, maxi, maxi2, mini, mini2, ar, tabul, cnt;
+    int z, n, j, maxi, maxi2, mini, mini2, ar;
 
     printf("Хотите запустить программу? Нажмите 1 для продолжения, 2 для выхода \n");
     scanf("%d", &j);
@@ -24,11 +24,7 @@ int main()
         p = x + (n * 0.1);
         ad = (a_to-a_from)/n;
         double y_array[n];
-        double x_array[n];
-        cnt = sizeof(y_array)/ sizeof(double);
-        ;
         maxi, mini, maxi2, mini2, ar = 0;
-
 
         switch (z) {
             case 1:
@@ -41,7 +37,6 @@ int main()
                             a = i;
                         g = (3 * (-3 * pow(a, 2) + 2 * a * x + 21 * pow(x, 2))) /
                             (35 * pow(a, 2) + 37 * a * x + 6 * pow(x, 2));
-                        x_array[ar] = x;
                         y_array[ar] = g;
                         ar += 1;
                         printf("g= %lf \n", g);
@@ -70,7 +65,6 @@ int main()
                     for (i =a_from ; i < a_to; i+=ad)
                         a = i;
                     f = 1 / (cos(3 * pow(a, 2) + 5 * a * x + 2 * pow(x, 2)));
-                    x_array[ar] = x;
                     y_array[ar] = f;
                     ar += 1;
                     printf("f= %lf \n", f);
@@ -97,7 +91,6 @@ int main()
                     if (v >= 1) {
 
                         y = acosh(-12 * pow(a, 2) - 4 * a * x + pow(x, 2) + 1);
-                        x_array[ar] = x;
                         y_array[ar] = y;
                         ar += 1;
                         printf("f= %lf \n", y);
@@ -124,12 +117,7 @@ int main()
             default:
                 printf("Выберите номер функции 1,2 или 3");
         }
-        while (tabul < n ) {
-            printf("%lf\t",y_array[tabul]);
-            printf("X = %lf\n",x_array[tabul]);
-            tabul+=1;
 
-        }
         printf("Наибольшее число массива = %lf \n", y_array[maxi]);
         printf("Наименьшее число массива = %lf \n", y_array[mini]);
         printf("Хотите запустить программу? Нажмите 1 для продолжения, 2 для выхода \n");
@@ -137,6 +125,7 @@ int main()
     }
 
 }
+
 
 
 

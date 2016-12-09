@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include <math.h>
+#include <string.h>
 
 double acosh(double d);
 int main()
 {
     double a_from, x, g, f, y, v, p, a, a_to, ad, i;
-    int z, n, j, maxi, maxi2, mini, mini2, ar, tabul, cnt;
-
+    int z, n, j, maxi, maxi2, mini, mini2, ar, tabul, cnt, ars, n2, pp, ho;
+    char string_array[999], string_array2[9999], shable[1024];
+    int compare = 100;
     printf("Хотите запустить программу? Нажмите 1 для продолжения, 2 для выхода \n");
     scanf("%d", &j);
     while ((j==1)) {
@@ -21,13 +23,16 @@ int main()
         scanf("%d", &n);
         printf("Введите номер функции \n");
         scanf("%d", &z);
+        printf("Введите шаблон \n");
+        scanf("%s", shable);
         p = x + (n * 0.1);
+
         ad = (a_to-a_from)/n;
         double y_array[n];
         double x_array[n];
         cnt = sizeof(y_array)/ sizeof(double);
         ;
-        maxi, mini, maxi2, mini2, ar = 0;
+        maxi, mini, maxi2, mini2, ar, ars, pp = 0;
 
 
         switch (z) {
@@ -132,11 +137,16 @@ int main()
         }
         printf("Наибольшее число массива = %lf \n", y_array[maxi]);
         printf("Наименьшее число массива = %lf \n", y_array[mini]);
+        while (ars < n){
+            sprintf(string_array, "%lf", y_array[ars]);
+            strcat(string_array2, string_array);
+            ars++;
+        }
+        printf("%s \n" , string_array2);
+        ho = strstr(string_array2, shable);
+        printf("Жулик = %d \n",ho);
         printf("Хотите запустить программу? Нажмите 1 для продолжения, 2 для выхода \n");
         scanf("%d", &j);
     }
 
 }
-
-
-
