@@ -25,8 +25,6 @@ int main()
         ad = (a_to-a_from)/n;
         double y_array[n];
         double x_array[n];
-        cnt = sizeof(y_array)/ sizeof(double);
-        ;
         maxi, mini, maxi2, mini2, ar = 0;
 
 
