@@ -85,6 +85,7 @@ int main()
                     printf("G_function id = %.0i , x = %.3lf, G = %.3lf \n" , G_function.id[r] , G_function.x[r], G_function.f[r]);
                     r+= 1;
                     ar+= 1;
+                    maxi+= 1;
 
                 }
 
