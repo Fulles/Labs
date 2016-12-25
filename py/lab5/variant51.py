@@ -38,16 +38,15 @@ while start == 1:
                 x_values.append(x)
                 y_values.append(g)
                 plt.title('График g')
-                if y_values[mini] > y_values[mini2]:
-                    mini = mini2
-                    mini2 += 1
+                st = str(y_values[r])
+                r += 1
+                s_values.append(st)
+                if k == 0:
+                    st2 = st
+                    k += 1
+
                 else:
-                    mini2 += 1
-                if y_values[maxi] < y_values[maxi2]:
-                    maxi = maxi2
-                    maxi2 += 1
-                else:
-                    maxi2 += 1
+                    st2 = st2 + st
             else:
                 print("Нельзя делить на НОЛЬ")
             '''Вторая функция'''
@@ -64,10 +63,9 @@ while start == 1:
             if k == 0:
                 st2 = st
                 k += 1
-                print("pri 0 = %s" % st1)
+
             else:
                 st2 = st2 + st
-                print("strin = %s" % st2)
             if y_values[maxi] < y_values[maxi2]:
                 maxi = maxi2
                 maxi2 += 1
@@ -100,7 +98,6 @@ while start == 1:
             print("Выберите функцию 1,2 или 3")
     print(y_values[mini])
     print(y_values[maxi])
-    print(s_values)
-
+    print("strin = %s" % st2)
 
     start = int(input("Хотите запустить программу? Если да,то нажмите 1 \n"))
